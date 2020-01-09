@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+    background-color: peachpuff;
+    /* 浮动 */
+    float: left;
+    /* 在有背景的前提下文字之间有空隙 */
+    padding-right: 10px;
+}
+h3{
+    height: 20px;
+    background-color: rebeccapurple;
+}
+/* 解决父元素塌陷
+1.父元素ul添加overflowhiddem(溢出隐藏、解决浮动)
+2.给父元素添加高
+*/
