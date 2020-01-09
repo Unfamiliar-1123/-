@@ -1,0 +1,25 @@
+/* 把所有元素的margin padding都去掉 */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#div1{
+    width: 200px;
+    height: 200px;
+    background-color:rebeccapurple;
+    color: seashell;
+    /* 内边距 */
+    padding: 100px;
+    /* 图像边框 */
+    border:1px solid slategrey;
+    /* 外边距 */
+    margin-bottom: 50px;
+}
+#div2{
+    width: 200px;
+    height: 200px;
+    background-color: violet;
+    color: brown;
+    padding: 100px;
+    border:1px solid thistle;
+}
