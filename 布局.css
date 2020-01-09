@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#div3{
+    width: 960px;
+    height: 50px;
+    background-color:orchid;
+    /* 上下边距为0 块级元素水平居中  左右自适应 */
+    margin: 0 auto;
+}
+#container{
+    height: 50px;
+    background: #f63a00;
+}
