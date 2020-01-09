@@ -1,0 +1,29 @@
+#div1{
+    background: brown;
+    color: cornsilk;
+    width: 300px;
+    height: 300px;
+}
+#div2{
+    background: magenta;
+    color: lightcoral;
+    width: 300px;
+    height: 300px;
+}
+/* li{
+    width: 50px;
+    height: 50px;
+    background:blue;
+} */
+/* .a{
+    width: 30px;
+    height: 30px;
+    background:brown;
+} */
+/* #ul1. aa{
+    
+    background:brown;
+} */
+#ul1 .aa{
+    background-color: khaki;
+}
