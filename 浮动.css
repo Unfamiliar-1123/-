@@ -17,4 +17,9 @@ h3{
 /* 解决父元素塌陷
 1.父元素ul添加overflowhiddem(溢出隐藏、解决浮动)
 2.给父元素添加高
+3..clearfix::after{
+    content:"";
+    display: block;
+    clear:both;
+}
 */
