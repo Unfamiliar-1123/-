@@ -16,6 +16,21 @@
     var num = window.prompt("请输入年龄",18);
     var num11 = num*24*3600*365;
     console.log(num11);
+    function clone(person){
+        var person2 = {};
+        for(var key in person){
+            // 克隆开始
+            person2[key] = person[key];
+        }
+        return person2
+    }
+    var obj = {
+        name:"zhangsan",
+        age:20
+    }
+    var obj2 = clone(obj)
+    console.log(obj2);
+    // 克隆结束
     </script>
 </body>
 </html>
