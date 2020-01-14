@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>柯基宝宝</title>
+    <link rel="stylesheet" href="轮播图.css">
+</head>
+<body>
+    <div id="container">
+        <div id="content-box">
+            <div class="selected"><img src="http://www.t-chs.com/tuhsJDEwLmFsaWNkbi5jb20vaTEvMzkwMDY5MjMxL1RCMjZZNktyNFdZQnVOankxemtYWFhHR3BYYV8hITM5MDA2OTIzMSQ5.jpg" alt="一张图片"></div>
+            <div><img src="http://b-ssl.duitang.com/uploads/item/201712/18/20171218160203_LMwdC.jpeg" alt="一张图片"></div>
+            <div><img src="http://pic8.58cdn.com.cn/zhuanzh/n_v2a1655d061b3246a29b1580271c711e75.jpg?w=750&h=0" alt="一张图片"></div>
+            <div><img src="http://img.mp.itc.cn/upload/20170107/b333be09bef9440686066d7cbe16f4ec_th.jpg" alt="一张图片"></div>
+            <div><img src="http://b-ssl.duitang.com/uploads/item/201802/21/20180221160713_MWRXy.jpeg" alt="一张图片"></div>
+        </div>
+        <ul id="btn-box">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul id="btnn-box">
+            <!-- &lt小于号     &gt大于号      &nbsp空格 -->
+            <li class="clicked">&lt</li>
+            <li id="next-btn">&gt</li>
+        </ul>
+    </div>
+    <script>
+        var oBtnBox = document.getElementById("btn-box")[0];
+        var aLi = oBtnBox.getElementsByTagName("li");
+        var oContentBox = document.getElementById("content-box")[0];
+        var aDiv = oContentBox.getElementsByTagName("div");
+        var aNext = document.getElementById("next-btn");
+        var iNow = 0;
+        for(var i = 0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                for(var j = 0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                this.className = "active";
+                console.log(this.index);
+                aDiv[this.index].className = "selected";
+            }
+        }
+        oNext.onclick = function(){
+            iNow++;
+        //     if(iNow > aBtn.length-1){
+        //         iNow = 0;
+        //     }
+        //     for(var i=0; i<aBtn.length; i++){
+        //         aBtn[i].className = "";
+        //         aImg[iNow].className = "";
+        //     }
+        //     aBtn[iNow].className = "active";
+        //     aImg[iNow].className = "selected";
+        // }
+        // }
+
+
+
+        
+        // var oBtnnbox = document.getElementById("btnn-box");
+        // var aLii = oBtnnbox.getElementsByTagName("li");
+        // for(var i = 0; i<aLi.length+1; i++){
+        //     aLi[i].index = i;
+        //     aLi[i].onclick = function(){
+        //         for(var j = 0;j<aLi.length;j++){
+        //             aLii[j].className = "";
+        //             aDiv[j].className = "";
+        //         }
+        //         this.className = "clicked";
+        //         console.log(this.index);
+        //         aDiv[this.index].className = "selected";
+        //     }
+        // }
+        </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+#container{
+    margin: 50px auto;
+    width: 500px;
+    position: relative;
+}
+#btnn-box{
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    bottom: 2px;
+}
+#btnn-box li{
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    color: papayawhip;
+    margin-right: 10px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+#btnn-box .clicked{
+    background: tan;
+    color: yellow;
+}
+#btn-box{
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    bottom: 2px;
+}
+#btn-box li{
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    color: papayawhip;
+    margin-right: 10px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid gray;
+    
+}
+#btn-box .active{
+    background: tan;
+    color: yellow;
+}
+#content-box div{
+    width: 500px;
+    height: 300px;
+    border: 1px solid palevioletred;
+    display: none;
+    border-radius: 2px;
+}
+#content-box .selected{
+    display: block;
+}
+/* 给所有的图片设置宽高 */
+#content-box img{
+    width: 500px;
+    height: 300px;
+}
