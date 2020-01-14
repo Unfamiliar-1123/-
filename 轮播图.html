@@ -44,12 +44,21 @@
                     aDiv[j].className = "";
                 }
                 this.className = "active";
-                console.log(this.index);
+                // console.log(this.index);
                 aDiv[this.index].className = "selected";
             }
         }
         oNext.onclick = function(){
             iNow++;
+            if(iNow > aLi.length-1){
+                iNow = 0;
+            }
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].className = "";
+                aDiv[i].className = "";
+            }
+            aLi[iNow].className = "active";
+            aDiv[iNow].className = "selected";
         //     if(iNow > aBtn.length-1){
         //         iNow = 0;
         //     }
@@ -64,7 +73,7 @@
 
 
 
-        
+
         // var oBtnnbox = document.getElementById("btnn-box");
         // var aLii = oBtnnbox.getElementsByTagName("li");
         // for(var i = 0; i<aLi.length+1; i++){

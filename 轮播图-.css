@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+#container{
+    width: 750px;
+    margin:50px auto;
+    position: relative;
+}
+.img-box li{
+    display: none;
+}
+.img-box img{
+    display: block;
+}
+.img-box .selected{
+    display: block;
+}
+.btn-box{
+    position: absolute;
+    right:10px;
+    bottom:10px;
+}
+.btn-box li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.5);
+    color:#fff;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer; /*鼠标滑过手状*/
+}
+.btn-box .active{
+    background: #ff0036;
+}
+.arrow-box{
+    position: absolute;
+    left:10px;
+    bottom:10px;
+}
+.arrow-box li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
