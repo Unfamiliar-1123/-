@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+#container{
+    width: 750px;
+    height: 291px;
+    overflow: hidden;
+    margin:50px auto;
+    position: relative;
+}
+.img-box{
+    width:3750px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transition: left 1s linear;
+}
+.img-box li{
+    float: left;
+    width:750px;
+}
+.btn-box{
+    position: absolute;
+    right:10px;
+    bottom:10px;
+}
+.arrow-box{
+    position: absolute;
+    left:10px;
+    bottom: 10px;
+}
+.btn-box li,.arrow-box li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+#container img{
+    width: 800px;
+    height:500px;                                                                                                           
+}

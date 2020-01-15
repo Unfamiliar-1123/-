@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="轮播图-.css">
+    <link rel="stylesheet" href="轮播图2.css">
 </head>
 <body>
     <div id="container">
         <ul class="img-box">
             <li class="selected">
-                <img src="http://www.t-chs.com/tuhsJDEwLmFsaWNkbi5jb20vaTEvMzkwMDY5MjMxL1RCMjZZNktyNFdZQnVOankxemtYWFhHR3BYYV8hITM5MDA2OTIzMSQ5.jpg" alt="a picture">
+                <img src="http://www.t-chs.com/tuhsJDEwLmFsaWNkbi5jb20vaTEvMzkwMDY5MjMxL1RCMjZZNktyNFdZQnVOankxemtYWFhHR3BYYV8hITM5MDA2OTIzMSQ5.jpg" alt="">
             </li>
             <li>
-                <img src="http://b-ssl.duitang.com/uploads/item/201712/18/20171218160203_LMwdC.jpeg" alt="a picture">
+                <img src="http://b-ssl.duitang.com/uploads/item/201712/18/20171218160203_LMwdC.jpeg" alt="">
             </li>
             <li>
-                <img src="http://pic8.58cdn.com.cn/zhuanzh/n_v2a1655d061b3246a29b1580271c711e75.jpg?w=750&h=0" alt="a picture">
+                <img src="http://pic8.58cdn.com.cn/zhuanzh/n_v2a1655d061b3246a29b1580271c711e75.jpg?w=750&h=0" alt="">
             </li>
             <li>
-                <img src="http://img.mp.itc.cn/upload/20170107/b333be09bef9440686066d7cbe16f4ec_th.jpg" alt="a picture">
+                <img src="http://img.mp.itc.cn/upload/20170107/b333be09bef9440686066d7cbe16f4ec_th.jpg" alt="">
             </li>
             <li>
-                <img src="http://b-ssl.duitang.com/uploads/item/201802/21/20180221160713_MWRXy.jpeg" alt="a picture">
+                <img src="http://b-ssl.duitang.com/uploads/item/201802/21/20180221160713_MWRXy.jpeg" alt="">
             </li>
-    
         </ul>
         <ul class="btn-box">
             <li class="active">1</li>
@@ -40,8 +39,7 @@
         </ul>
     </div>
     <script>
-
-        // var oContainer = document.getElementById('container');
+        var oContainer = document.getElementById('container');
 
         var btnBox = document.getElementsByClassName('btn-box')[0];//[]
         // btnBox[0]
@@ -51,12 +49,13 @@
         var oNext = document.getElementById('next-btn');
         var oPrev = document.getElementById('prev-btn');
         var iNow = 0;
+        var timer ;
 
-        for(var i=0; i<aBtn.length; i++){ 
+        for(var i=0; i<aBtn.length; i++){
             aBtn[i].index = i;
             aBtn[i].onclick = function(){
                 // for(var j=0; j<aBtn.length;j++){
-                //     aBtn[j].className =""; 
+                //     aBtn[j].className ="";
                 //     aImg[j].className ="";
                 // }
                 // aBtn[this.index].className = "active";
@@ -66,13 +65,12 @@
                 iNow = this.index;
             }
         }
-
         oNext.onclick = function(){
             iNow++;
             if(iNow > aBtn.length-1){
                 iNow = 0;
             }
-            
+             
             change(iNow);
         }
 
@@ -81,35 +79,34 @@
             if(iNow < 0){
                 iNow = aBtn.length-1;
             }
-           
+            
             change(iNow);
         }
-       
+        
         function change(idx){
             for(var i=0; i<aBtn.length; i++){
                 aBtn[i].className = "";
-                aImg[i].className = "";
+                aImg[iNow].className = "";
             }
             aBtn[idx].className = "active";
             aImg[idx].className = "selected";
         }
-        var timer = setInterval(function(){
-            oNext.onclick();
-        },2000);
-
+        run();
         oContainer.onmouseover = function(){
             clearInterval(timer);
         }
         oContainer.onmouseout = function(){
-            // 局部
+            run();
+        }
+        
+        function run(){
             timer = setInterval(function(){
                 oNext.onclick();
             },2000);
         }
+
+
     </script>
 
-
-    
-    
 </body>
 </html>

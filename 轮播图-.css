@@ -6,12 +6,19 @@ ul{
     list-style: none;
 }
 #container{
-    width: 750px;
+    width: 500px;
+    height: 291px;
+    overflow: hidden;
     margin:50px auto;
     position: relative;
 }
+.img-box{
+    width: 2500px;
+}
 .img-box li{
-    display: none;
+    /* display: none; */
+    float: left;
+    width: 500px;
 }
 .img-box img{
     display: block;
@@ -23,7 +30,7 @@ ul{
 }
 .btn-box{
     position: absolute;
-    right:250px;
+    right:0px;
     bottom:5px;
 }
 .btn-box li{
