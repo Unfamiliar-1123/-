@@ -11,21 +11,21 @@
     <div id="container">
         <ul class="img-box">
             <li class="selected">
-                <img src="img/1.jpg" alt="">
+                <img src="http://www.t-chs.com/tuhsJDEwLmFsaWNkbi5jb20vaTEvMzkwMDY5MjMxL1RCMjZZNktyNFdZQnVOankxemtYWFhHR3BYYV8hITM5MDA2OTIzMSQ5.jpg" alt="">
             </li>
             <li>
-                <img src="img/2.jpg" alt="">
+                <img src="http://b-ssl.duitang.com/uploads/item/201712/18/20171218160203_LMwdC.jpeg" alt="">
             </li>
             <li>
-                <img src="img/3.jpg" alt="">
+                <img src="http://pic8.58cdn.com.cn/zhuanzh/n_v2a1655d061b3246a29b1580271c711e75.jpg?w=750&h=0" alt="">
             </li>
             <li>
-                <img src="img/4.jpg" alt="">
+                <img src="http://img.mp.itc.cn/upload/20170107/b333be09bef9440686066d7cbe16f4ec_th.jpg" alt="">
             </li>
             <li>
-                <img src="img/5.jpg" alt="">
+                <img src="http://b-ssl.duitang.com/uploads/item/201802/21/20180221160713_MWRXy.jpeg" alt="">
             </li>
-
+    
         </ul>
         <ul class="btn-box">
             <li class="active">1</li>
@@ -35,12 +35,12 @@
             <li>5</li>
         </ul>
         <ul class="arrow-box">
-            <li>&lt;</li>
+            <li id="prev-btn">&lt;</li>
             <li id="next-btn">&gt;</li>
         </ul>
     </div>
     <script>
-        
+
         // var oContainer = document.getElementById('container');
 
         var btnBox = document.getElementsByClassName('btn-box')[0];//[]
@@ -49,37 +49,67 @@
         var imgBox = document.getElementsByClassName('img-box')[0];
         var aImg = imgBox.getElementsByTagName('li');
         var oNext = document.getElementById('next-btn');
+        var oPrev = document.getElementById('prev-btn');
         var iNow = 0;
 
-        for(var i=0; i<aBtn.length; i++){
+        for(var i=0; i<aBtn.length; i++){ 
             aBtn[i].index = i;
             aBtn[i].onclick = function(){
-                for(var j=0; j<aBtn.length;j++){
-                    aBtn[j].className ="";
-                    aImg[j].className ="";
-                }
-                this.className = "active";
-                aImg[this.index].className = "selected";
+                // for(var j=0; j<aBtn.length;j++){
+                //     aBtn[j].className =""; 
+                //     aImg[j].className ="";
+                // }
+                // aBtn[this.index].className = "active";
+                // // this.className = "active";
+                // aImg[this.index].className = "selected";
+                change(this.index);
+                iNow = this.index;
             }
         }
-    
+
         oNext.onclick = function(){
             iNow++;
             if(iNow > aBtn.length-1){
                 iNow = 0;
             }
-            // 索引为iNow 的按钮红色 
+            
+            change(iNow);
+        }
+
+        oPrev.onclick = function(){
+            iNow--;
+            if(iNow < 0){
+                iNow = aBtn.length-1;
+            }
+           
+            change(iNow);
+        }
+       
+        function change(idx){
             for(var i=0; i<aBtn.length; i++){
                 aBtn[i].className = "";
                 aImg[i].className = "";
             }
-            aBtn[iNow].className = "active";
-            aImg[iNow].className = "selected";
+            aBtn[idx].className = "active";
+            aImg[idx].className = "selected";
+        }
+        var timer = setInterval(function(){
+            oNext.onclick();
+        },2000);
+
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        }
+        oContainer.onmouseout = function(){
+            // 局部
+            timer = setInterval(function(){
+                oNext.onclick();
+            },2000);
         }
     </script>
 
 
     
-
+    
 </body>
 </html>

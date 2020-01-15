@@ -15,21 +15,23 @@ ul{
 }
 .img-box img{
     display: block;
+    width: 500px;
+    height: 500px;
 }
 .img-box .selected{
     display: block;
 }
 .btn-box{
     position: absolute;
-    right:10px;
-    bottom:10px;
+    right:250px;
+    bottom:5px;
 }
 .btn-box li{
     float: left;
-    width: 20px;
+    width: 40px;
     height: 20px;
-    background: rgba(0,0,0,0.5);
-    color:#fff;
+    background: rgba(0,0,0,0.3);
+    color:papayawhip;
     margin-right: 5px;
     text-align: center;
     line-height: 20px;
@@ -38,22 +40,26 @@ ul{
     cursor: pointer; /*鼠标滑过手状*/
 }
 .btn-box .active{
-    background: #ff0036;
+    background: gray;
 }
 .arrow-box{
     position: absolute;
-    left:10px;
-    bottom:10px;
+    left:0px;
+    bottom:5px;
 }
 .arrow-box li{
     float: left;
-    width: 20px;
+    width: 40px;
     height: 20px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
+    background: rgba(0,0,0,0.3);
+    color: papayawhip;
     text-align: center;
     line-height: 20px;
     margin-right: 5px;
     border-radius: 5px;
     cursor: pointer;
 }
+/* . img-box img{
+    width: 500px;
+    height: 300px;
+} */
