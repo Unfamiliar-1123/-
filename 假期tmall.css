@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+#header{
+    background: #f2f2f2;
+    width: 1519.2px;
+    height: 33px;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    /* position: relative;
+    right: 0px; */
+}
+#header li{
+    margin-top: 10px;
+    float: left;
+    color: #999999;
+    padding: 0px 10px;
+}
+#header .miao{
+    padding-left: 150px;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+#header .denglu a{
+    padding: 0px 10px 0px 20px;
+    color: #999999;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    cursor: pointer;
+}    
+#header .zhuce a{
+    padding: 0px 10px;
+    color: #999999;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    cursor: pointer;
+}
+#header .left{
+    float: left;
+    /* position: absolute; */
+     padding-left: 500px;
+}
+#header .left a{
+    color: #999999;
+}
+#header a:hover{
+    color: #ff0036;;
+}
+/* #header .left .arrow{
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+    border-top:3px solid #bbbbbb ;
+    position: absolute;
+    right: 5px;
+    top: 16px;
+    transition: tranform 0.3s ease;
+    transform-origin: 50% 25%;
+} */
+#picture-top1 img{
+    float: left;
+    width: 240px;
+    height: 130px;
+    margin-top: -5px;
+}
+#form{
+    margin-left: 150px;
+    /* padding-left: 100px; */
+    float: left;
+    border: 2px solid #ff0036;
+    width: 625px;
+    height: 40px;
+    margin-top:40px ;
+}
+#form input{
+    float: left;
+    /* border-color: #ff0036 ; */
+    /* border: 2px solid #ff0036; */
+    display: block;
+    /* border: 5px; */
+    width: 491px;
+    height: 30px;
+    /* margin-top: 40px; */
+    /* 边框消失 */
+    border: none;
+    /* 自带的篮筐消失 */
+    outline: none;
+    padding: 5px;
+    font-size: 15px;
+}
+
+#form button{
+    /* padding-left: 100px; */
+    width: 124px;
+    height: 40px;
+    background: #ff0036;
+    text-align: center;
+    line-height: 40px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    float: left;
+    font-weight: 700;
+    /* 调节文字之间的间隙 */
+    letter-spacing:8px ;
+}
+.tupian img{
+    margin-top: 40px;
+    margin-left: 200px;
+}
+.wrapper li{
+    float: left;
+    height: 35px;
+    line-height: 35px;
+}
+.wrapper img{
+    width: 100px;
+    height: 30px;
+}
+.wrapper a{
+    color: #333;
+    font-size: 16px;
+    padding: 0 8px;
+    font-weight: 700;
+    font-family: fantasyMicrosoft YaHei"
+}
+.wrapper a:hover{
+    color: #ff0036;
+}
