@@ -121,9 +121,19 @@ ul{
     color: #333;
     font-size: 16px;
     padding: 0 8px;
-    font-weight: 700;
+    font-weight: 1000;
     font-family: fantasyMicrosoft YaHei"
 }
 .wrapper a:hover{
     color: #ff0036;
+}
+ #bg{
+    
+    width: 10000px;
+    height: 10000px;
+    background-color: #f2f2f2;
+    border-top: 3px solid #ff0036;
+    margin-top: 40px;
+    background-image: url();
+    
 }
