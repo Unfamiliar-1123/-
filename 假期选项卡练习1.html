@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="假期选项卡练习1.css">
+</head>
+<body>
+    <div id="grandpapa">
+        <ul id="papa">
+            <li class="active">三只松鼠</li>
+            <li>良家铺子</li>
+            <li>百草味</li>
+        </ul>
+        <div id="mama">
+            <div class="selected">坚果大亨</div>
+            <div>猪肉脯开源大使</div>
+            <div>零食の家</div>
+        </div>
+    </div>
+
+    <script>
+    var oPapa = document.getElementById("papa");
+    var aLi = oPapa.getElementsByTagName("li");
+    var oMama = document.getElementById("mama");
+    var aDiv = oMama.getElementsByTagName("div");
+    for(var i = 0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onclick = function(){
+            for(var j = 0;j<aLi.length;j++){
+                aLi[j].className = "";
+                aDiv[j].className = "";
+            }
+            this.className = "active";
+            aDiv[this.index].className = "selected";
+        }
+    }
+    
+    
+    </script>
+
+</body>
+</html>

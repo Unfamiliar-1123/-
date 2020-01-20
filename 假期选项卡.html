@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="假期选项卡.css">
+</head>
+<body>
+    <div id="container">
+        <ul id="btn-box">
+            <li class="active">芒果</li>
+            <li>橘子</li>
+            <li>苹果</li>
+        </ul>
+        <div id="content-box">
+            <div class="selected">mango</div>
+            <div>orange</div>
+            <div>apple</div>
+        </div>
+    </div>
+    <script>
+        var oBtnbox = document.getElementById("btn-box");
+        
+        var aLi = oBtnbox.getElementsByTagName("li");
+
+
+        var oContentbox = document.getElementById("content-box");
+        var aDiv =  oContentbox.getElementsByTagName("div");
+
+        for(var i = 0;i<aLi.length;i++){
+
+            aLi[i].index = i;
+
+            aLi[i].onclick = function(){
+                // 找到点击的li this 对当前对象的引用：在点击事件中（点谁this就是谁）
+                for(var j = 0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                this.className = "active";
+                aDiv[this.index].className = "selected";
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+#container{
+    margin: 50px auto;
+    width: 500px;
+    height: 500px;
+}
+#box1{
+    overflow: hidden;
+}
+#box1 li{
+    float: left;
+    width: 80px;
+    height: 30px;
+    background: indianred;
+    border: 1px solid khaki;
+    margin-right: 5px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+#box1 .active{
+    background: tan;
+}
+#box2 div{
+    border: 1px solid rosybrown;
+    width: 500px;
+    height: 250px;
+    display: none;
+}
+#box2 .selected{
+    display: block;
+}

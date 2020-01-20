@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+#grandpapa{
+    margin: 50px auto;
+    height: 450px;
+    width: 500px;
+}
+#papa{
+    overflow: hidden;
+}
+
+#grandpapa #papa li{
+    float: left;
+    background: chocolate;
+    margin: 5px;
+    border: 1px solid yellow;
+    margin-right: 5px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+#grandpapa #papa .active{
+    background: navajowhite;
+}
+#mama div{
+    width: 300px;
+    height: 180px;
+    border: 1px solid indianred;
+    display: none;
+}
+#mama .selected{
+    display: block;
+}
