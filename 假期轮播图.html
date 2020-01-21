@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="假期轮播图.css">
+</head>
+<body>
+    <div id="container">
+        <ul class="img-box">
+            <li class="selected"><a href="#"><img src="http://i2.hdslb.com/bfs/archive/0c8faceae56e07a3819d29d9eb4263d779446414.jpg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://img0.imgtn.bdimg.com/it/u=710462151,1826669127&fm=26&gp=0.jpg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://pics1.baidu.com/feed/810a19d8bc3eb135d5e1ee88db8f77d6fd1f4472.png?token=c16ef3f28e861ddb8f543a37b095ce63&s=1A6483085AB10496A628E697030090AF" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://b-ssl.duitang.com/uploads/item/201807/08/2018070831032_jvRz2.jpeg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://img.jammyfm.com/wordpress/wp-content/uploads/2017/12/201712191409446088.jpg?x-oss-process=image/resize,w_720,h_480,m_fill,limit_0" alt="一张图片"></a></li>
+
+        </ul>
+        <ul class="btn-box">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul class="arrow-box">
+            <li id="prev-btn">&lt;</li>
+            <li id="next-btn">&gt;</li>
+        </ul>
+    </div>
+
+    <script>
+
+    var oContainer = document.getElementById("container");    
+
+
+    var oImgbox = document.getElementsByClassName("img-box")[0];
+    var aImg = oImgbox. getElementsByTagName("li");
+    var oBtnbox = document.getElementsByClassName("btn-box")[0];
+    var aBtn = oBtnbox.getElementsByTagName("li");
+
+    var oNext = document.getElementById("next-btn");
+    var iNow = 0;
+
+    var oPrev = document.getElementById("prev-btn");    
+
+
+    for(var i = 0;i<aBtn.length;i++){
+        aBtn[i].index = i;
+        aBtn[i].onclick = function(){
+            for(var j = 0;j<aBtn.length;j++){
+                aBtn[j].className = "";
+                aImg[j].className = "";
+            }
+            this.className = "active";
+            aImg[this.index].className = "selected";
+            iNow = this.index;
+        }
+    }
+
+    oNext.onclick = function(){
+        iNow++;
+        if(iNow > aBtn.length-1){
+            iNow = 0;
+        }
+        // 索引为iNow的按钮为红色
+        for(var i = 0;i<aBtn.length;i++){
+            aBtn[i].className = "";
+            aImg[i].className = "";
+        }
+        aBtn[iNow].className = "active";
+        aImg[iNow].className = "selected";
+    }
+
+    oPrev.onclick = function(){
+        iNow--;
+        if(iNow < 0){
+            iNow = aBtn.length-1;
+        }
+        // 索引为iNow的按钮为红色
+        for(var i = 0;i<aBtn.length;i++){
+            aBtn[i].className = "";
+            aImg[i].className = "";
+        }
+        aBtn[iNow].className = "active";
+        aImg[iNow].className = "selected";
+    }
+
+    var timer = setInterval(function(){
+        oNext.onclick();
+    },2000);
+
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+
+    }
+
+    oContainer.onmouseout = function(){
+             timer = setInterval(function(){
+                oNext.onclick();
+             },2000);
+
+    }
+
+    
+    </script>
+</body>
+</html>
