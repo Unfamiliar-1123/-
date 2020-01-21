@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="假期选项卡练习3.css">
+</head>
+<body>
+
+
+    <div id="container">
+        <ul id="box1">
+            <li class="active">伊利</li>
+            <li>蒙牛</li>
+            <li>完达山</li>
+        </ul>
+        <div id="box2">
+            <div class="selected">A安慕希</div>
+            <div>A红枣益生菌</div>
+            <div>A原味老酸奶</div>
+        </div>
+    </div>
+
+    <script>
+    var oBox1 = document.getElementById("box1");
+    var aLi = oBox1.getElementsByTagName("li");
+    var oBox2 = document.getElementById("box2");
+    var aDiv = oBox2.getElementsByTagName("div");
+    for(var i = 0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onclick = function(){
+            for(var j = 0;j<aLi.length;j++){
+                aLi[j].className = "";
+                aDiv[j].className = "";
+            }
+            this.className = "active";
+            aDiv[this.index].className = "selected";
+        }
+    }
+    
+    </script>
+</body>
+</html>
