@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="假期轮播图练习1.css">
+</head>
+<body>
+    <div id="container">
+        <ul class="img-box">
+            <li class="selected"><a href="#"><img src="http://img3.duitang.com/uploads/item/201502/13/20150213220149_c8tYk.jpeg" alt="a picture"></a></li>
+            <li><a href="#"><img src="http://www.005.tv/uploads/160727/22-160HG42311508.jpg" alt="a picture"></a></li>
+            <li><a href="#"><img src="http://b-ssl.duitang.com/uploads/item/201601/16/20160116203049_jHfwk.jpeg" alt="a picture"></a></li>
+            <li><a href="#"><img src="http://b-ssl.duitang.com/uploads/item/201511/09/20151109121440_3AVEm.png" alt="a picture"></a></li>
+            <li><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579600264445&di=ae002a8bfd20ebe926a69d013c5192a0&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201606%2F14%2F20160614224510_HwyZv.thumb.700_0.jpeg" alt="a picture"></a></li>
+        </ul>
+        <ul class="btn-box">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul class="arrow-box">
+            <li id="prev-btn">&lt;</li>
+            <li id="next-btn">&gt;</li>
+        </ul>
+    </div>
+
+
+    <script>
+    var oContainer = document.getElementById("container");
+    var oImgbox = document.getElementsByClassName("img-box")[0];
+    var aImg = oImgbox.getElementsByTagName("li");
+    var oBtnbox = document.getElementsByClassName("btn-box")[0];
+    var aBtn = oBtnbox.getElementsByTagName("li");
+    var oNext = document.getElementById("next-btn");
+    var oPrev = document.getElementById("prev-btn");
+    var iNow = 0;
+
+    
+
+    for(var i = 0;i<aBtn.length;i++){
+        aBtn[i].index = i;
+        aBtn[i].onclick = function(){
+            change(this.index);
+            iNow = this.index;
+
+
+        }
+    }
+    oNext.onclick = function(){
+        iNow++;
+        if(iNow > aBtn.length-1){
+            iNow = 0;
+        }
+        change(iNow);
+    }
+    oPrev.onclick = function(){
+        iNow--;
+        if(iNow < 0){
+            iNow = aBtn.length-1;
+        }
+        change(iNow);
+    }
+    function change(idx){
+        for(var j = 0;j<aBtn.length;j++){
+            aBtn[j].className = "";
+            aImg[j].className = "";
+        }
+        aBtn[idx].className = "active";
+        aImg[idx].className = "selected";
+    }
+    var timer = setInterval(function(){
+        oNext.onclick();
+    },2000);
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    }
+    oContainer.onmouseout = function(){
+        timer = setInterval(function(){
+        oNext.onclick();
+    },2000);
+    }
+
+    
+    
+    </script>
+</body>
+</html>
