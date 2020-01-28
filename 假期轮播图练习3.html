@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="假期轮播图练习1.css">
+    <link rel="stylesheet" href="假期轮播图练习3.css">
 </head>
 <body>
     <div id="container">
         <ul class="img-box">
-            <li class="selected"><a href="#"><img src="../-/tmall/images/1.jpg" alt="a picture"></a></li>
-            <li><a href="#"><img src="http://www.005.tv/uploads/160727/22-160HG42311508.jpg" alt="a picture"></a></li>
-            <li><a href="#"><img src="http://b-ssl.duitang.com/uploads/item/201601/16/20160116203049_jHfwk.jpeg" alt="a picture"></a></li>
-            <li><a href="#"><img src="http://b-ssl.duitang.com/uploads/item/201511/09/20151109121440_3AVEm.png" alt="a picture"></a></li>
-            <li><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579600264445&di=ae002a8bfd20ebe926a69d013c5192a0&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201606%2F14%2F20160614224510_HwyZv.thumb.700_0.jpeg" alt="a picture"></a></li>
+            <li class="selected"><a href="#"><img src="http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20180331/e161f56c4b16458a98e5358c87b93e02.jpeg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://n.sinaimg.cn/front/250/w650h400/20181003/6BEv-hktxqah4614460.jpg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://img1.cloud.itouchtv.cn/c35f144c1dabc3acef0e7555b3fe586e.jpeg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://www.euro-premium.cn/sites/default/files/2017/11/2017-11-08-102.jpg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://b-ssl.duitang.com/uploads/item/201606/02/20160602224655_a4TGY.thumb.700_0.jpeg" alt="一张图片"></a></li>
         </ul>
         <ul class="btn-box">
             <li class="active">1</li>
@@ -29,7 +29,6 @@
         </ul>
     </div>
 
-
     <script>
     var oContainer = document.getElementById("container");
     var oImgbox = document.getElementsByClassName("img-box")[0];
@@ -38,18 +37,12 @@
     var aBtn = oBtnbox.getElementsByTagName("li");
     var oPrev = document.getElementById("prev-btn");
     var oNext = document.getElementById("next-btn");
-    
     var iNow = 0;
-
-    
-
     for(var i = 0;i<aBtn.length;i++){
         aBtn[i].index = i;
         aBtn[i].onclick = function(){
             change(this.index);
             iNow = this.index;
-
-
         }
     }
     oNext.onclick = function(){
@@ -73,6 +66,7 @@
         }
         aBtn[idx].className = "active";
         aImg[idx].className = "selected";
+
     }
     var timer = setInterval(function(){
         oNext.onclick();
@@ -85,9 +79,6 @@
         oNext.onclick();
     },2000);
     }
-
-    
-    
     </script>
 </body>
 </html>
