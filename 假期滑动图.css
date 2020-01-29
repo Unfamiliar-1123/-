@@ -6,48 +6,42 @@ ul{
     list-style: none;
 }
 #container{
-    margin: 50px auto;
-    width: 500px;
+    width: 750px;
     height: 350px;
+    overflow: hidden;
+    margin: 50px auto;
     position: relative;
 }
-.img-box li{
-    display: none;
+.img-box{
+    width: 3750px;
+    /* 图片相对于父元素定位，可出现滑动效果 */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    /* 图片过渡 */
+    transition: left 1s ease ;
+
 }
-.img-box .selected{
-    display: block;
+.img-box li{
+    float: left;
+    width: 750px;
 }
 .img-box img{
     width: 750px;
     height: 350px;
     border: 1px solid navajowhite;
 }
-.btn-box li{
-    float: left;
-    width: 35px;
-    height: 20px;
-    background: coral;
-    border: 1px solid palegoldenrod;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 20px;
-    margin-left: 5px;
-    cursor: pointer;
-}
 .btn-box{
     position: absolute;
-    right: 8px;
-    bottom: 8px;
-}
-.btn-box .active{
-    background: oldlace;
+    right: 10px;
+    bottom: 10px;
 }
 .arrow-box{
     position: absolute;
-    left: 8px;
-    bottom: 8px;
+    left: 10px;
+    bottom: 10px;
 }
-.arrow-box li{
+.btn-box li,.arrow-box li{
     float: left;
     width: 35px;
     height: 20px;
@@ -58,4 +52,7 @@ ul{
     line-height: 20px;
     margin-left: 5px;
     cursor: pointer;
+}
+.btn-box .active{
+    background: lightpink;
 }

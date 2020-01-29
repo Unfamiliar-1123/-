@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="假期滑动图.css">
+</head>
+<body>
+    <div id="container">
+        <ul class="img-box">
+            <li class="selected"><a href="#"><img src="http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20180331/e161f56c4b16458a98e5358c87b93e02.jpeg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://n.sinaimg.cn/front/250/w650h400/20181003/6BEv-hktxqah4614460.jpg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://img1.cloud.itouchtv.cn/c35f144c1dabc3acef0e7555b3fe586e.jpeg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://www.euro-premium.cn/sites/default/files/2017/11/2017-11-08-102.jpg" alt="一张图片"></a></li>
+            <li><a href="#"><img src="http://b-ssl.duitang.com/uploads/item/201606/02/20160602224655_a4TGY.thumb.700_0.jpeg" alt="一张图片"></a></li>
+        </ul>
+        <ul class="btn-box">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul class="arrow-box">
+            <li id="prev-btn">&lt;</li>
+            <li id="next-btn">&gt;</li>
+        </ul>
+    </div>
+
+    <script>
+    var btnbox = document.getElementsByClassName("btn-box")[0];
+    var aBtn = btnbox.getElementsByTagName("li");
+    var oImgBox = document.getElementsByClassName("img-box")[0];
+    var aImg = oImgBox.getElementsByTagName("li");
+    var oNext = document.getElementById("next-btn");    
+    var oPrev = document.getElementById("prev-btn");
+    var iNow = 0;    
+    for(var i = 0; i<aBtn.length;i++){
+        aBtn[i].index = i;
+        aBtn[i].onclick = function(){
+            change(this.index);
+            // for(var j = 0;j<aBtn.length;j++){
+            //     aBtn[j].className = "";
+            // }
+            // this.className = "active";
+            // oImgBox.style.left = -this.index*750+"px";
+
+        }
+        
+    }
+    oNext.onclick = function(){
+        iNow++;
+        if(iNow > aBtn.length-1){
+            iNow = 0;
+        }
+        // for(var j = 0;j<aBtn.length;j++){
+        //         aBtn[j].className = "";
+        //     }
+        //     aBtn[iNow].className = "active";
+        //     oImgBox.style.left = -iNow*750+"px";
+            change(iNow);
+    }
+    oPrev.onclick = function(){
+        iNow--;
+        if(iNow < 0){
+            iNow = aBtn.length-1;
+        }
+        change(iNow);
+    }
+
+    function change(index){
+        for(var j = 0;j<aBtn.length;j++){
+                aBtn[j].className = "";
+                aImg[j].className = "";
+            }
+            aBtn[index].className = "active";
+            aImg[index].className = "selected";
+            oImgBox.style.left = -iNow*750+"px";
+    }
+    
+
+
+    var timer = setInterval(function(){
+        oNext.onclick();
+    },2000);
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    }
+    oContainer.onmouseout = function(){
+        timer = setInterval(function(){
+        oNext.onclick();
+    },2000);
+    }
+    </script>
+    <!-- <script>
+        var btnBox = document.getElementsByClassName("btn-box")[0];
+        var aBtn = btnBox.getElementsByTagName("li");
+        var oImgBox = document.getElementsByClassName("img-box")[0];
+        var oNext = document.getElementById('next-btn');
+        var iNow = 0;
+        /*
+            索引0   1   2     n    
+               0    1   -2    -n个图片的宽度 
+        */ 
+        for(var i=0; i<aBtn.length; i++){
+            aBtn[i].index = i;
+            aBtn[i].onclick = function(){
+
+                change(this.index);
+
+                // for(var j=0; j<aBtn.length; j++){
+                //     aBtn[j].className = "";
+                // }
+                // this.className =  "active";
+                // oImgBox.style.left = -this.index*750+"px";
+            }
+        }
+        oNext.onclick = function(){
+            iNow++;
+            if(iNow > aBtn.length-1){
+                iNow = 0;
+            }
+            change(iNow);
+        }
+        function change(index){
+            for(var j=0; j<aBtn.length; j++){
+                aBtn[j].className = "";
+            }
+            aBtn[index].className = "active";
+            oImgBox.style.left = -index*750+"px";  
+        }
+        
+    </script> -->
+
+</body>
+</html>
