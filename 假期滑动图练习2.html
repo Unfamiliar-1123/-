@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="假期滑动图练习2.css">
+</head>
+<body>
+    <div id="container">
+        <ul class="img-box">
+            <li class="selected"><a href="#"><img src="http://dpic.tiankong.com/tw/ln/QJ9106344855.jpg" alt="..."></a></li>
+            <li><a href="#"><img src="http://image.codes51.com/Article/image/20160515/20160515032926_7972.jpg" alt="..."></a></li>
+            <li><a href="#"><img src="http://img2.imgtn.bdimg.com/it/u=595951293,2101160597&fm=26&gp=0.jpg" alt="..."></a></li>
+            <li><a href="#"><img src="http://img1.imgtn.bdimg.com/it/u=3377421407,2102729856&fm=26&gp=0.jpg" alt="..."></a></li>
+            <li><a href="#"><img src="http://img0.imgtn.bdimg.com/it/u=1752368655,855940797&fm=26&gp=0.jpg" alt="..."></a></li>
+        </ul>
+        <ul class="btn-box">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul class="arrow-box">
+            <li id="prev-btn">&lt;</li>
+            <li id="next-btn">&gt;</li>
+        </ul>
+    </div>
+    <script>
+    var oContainer = document.getElementById("container");
+    var oImgbox = document.getElementsByClassName("img-box")[0];
+    var aImg = oImgbox.getElementsByTagName("li");
+    var oBtnbox = document.getElementsByClassName("btn-box")[0];
+    var aBtn = oBtnbox.getElementsByTagName("li");
+    var oPrev = document.getElementById("prev-btn");
+    var oNext = document.getElementById("next-btn");
+    var iNow = 0;
+    for(var i = 0;i<aBtn.length;i++){
+        aBtn[i].index = i;
+        aBtn[i].onclick = function(){
+            change(this.index);
+            iNow = this.index;
+        }
+    }
+    oNext.onclick = function(){
+        iNow++;
+        if(iNow > aBtn.length-1){
+            iNow = 0;
+        }
+        change(iNow);
+    }
+    oPrev.onclick = function(){
+        iNow--;
+        if(iNow < 0){
+            iNow = aBtn.length;
+        }
+        change(iNow);
+    }
+    function change(index){
+        for(var j = 0;j<aBtn.length;j++){
+            aBtn[j].className = "";
+            aImg[j].className = "";
+        }
+        aBtn[index].className = "active";
+        aImg[index].className = "selected";
+        oImgbox.style.left = -index*750+"px";
+    }
+    var timer = setInterval(function(){
+        oNext.onclick();
+    },2000);
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    }
+    oContainer.onmouseout = function(){
+        timer = setInterval(function(){
+        oNext.onclick();
+    },2000);
+    }
+    
+    </script>
+</body>
+</html>

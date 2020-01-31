@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+#container{
+    margin: 100px auto;
+    width: 750px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+.img-box img{
+    width: 750px;
+    height: 350px;
+    border: 1px solid ivory;
+}
+.img-box li{
+    float: left;
+    width: 750px;
+}
+.img-box{
+    width: 3750px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    transition: left 1s ease;
+}
+.btn-box li,.arrow-box li{
+    float: left;
+    width: 35px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgb(137, 226, 149);
+    border-radius: 5px;
+    margin-left: 5px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+.btn-box{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.arrow-box{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.btn-box .active{
+    background: chocolate;
+}
