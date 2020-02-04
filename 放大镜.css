@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#small-box{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    float: left;
+}
+#small-box img{
+    width: 100%;
+    height: 100%;
+}
+#drag{
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+    cursor: pointer;
+}
+#big-box{
+    float: left;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+#big-box img{
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
