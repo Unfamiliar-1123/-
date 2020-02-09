@@ -5,80 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;padding: 0;
-        }
-        #small-box{
-            width:400px;
-            height:400px;
-            position: relative;
-            float: left;
-        }
-        #small-box img{
-            width: 100%;
-            height:100%;
-        }
-        #drag{
-            width: 200px;
-            height: 200px;
-            background: rgba(255,255,255,0.5);
-            position: absolute;
-            left:0px;
-            top:0px;
-            display: none;
-            cursor: pointer;
-        }
-        #big-box{
-            float: left;
-            width:400px;
-            height:400px;
-            overflow: hidden;
-            display: none;
-            position: relative;
-        }
-        #big-box img{
-            width:800px;
-            height:800px;
-            position: absolute;
-            left:0px;
-            top:0px;
-
-        }
-
-
-    
-    </style>
+    <link rel="stylesheet" href="放大镜.css">
 </head>
 <body>
     <div id="container">
         <div id="small-box">
-            <img src="images/1.jpg" alt="">
+            <img src="../-/tmall/images/1.jpg" alt="a picture">
             <span id="drag"></span>
         </div>
         <div id="big-box">
-            <img id="bigImg" src="images/1.jpg" alt="">
+            <img id="bigImg" src="../-/tmall/images/1.jpg" alt="a picture">
         </div>
-
     </div>
 
     <script>
         var oSmallBox = document.getElementById("small-box");
         var oDrag = document.getElementById("drag");
         var oBigBox = document.getElementById("big-box");
-        var oBigImg = document.getElementById("bigImg")
+        var oBigImg = document.getElementById("bigImg");
         oSmallBox.onmouseover = function(){
             oDrag.style.display = "inline";
         }
         oSmallBox.onmousemove = function(e){
             e = e || window.event;
-            // 1 求出drag 应该定位的left值 
-            // console.log(oDrag.offsetWidth)
             var iLeft = e.clientX - oDrag.offsetWidth/2;
             var iTop = e.clientY - oDrag.offsetHeight/2;
             var xMax = oSmallBox.offsetWidth - oDrag.offsetWidth;
-            var yMax =  oSmallBox.offsetHeight - oDrag.offsetHeight
-            // 2判断临界点 
+            var yMax = oSmallBox.offsetHeight - oDrag.offsetHeight;
             if(iLeft < 0){
                 iLeft = 0;
             }
@@ -93,13 +46,7 @@
             }
             oDrag.style.left = iLeft +"px";
             oDrag.style.top = iTop +"px";
-            // 右边元素的位置 
             oBigBox.style.display = "block";
-            // 求出左边能走得最大距离  xMax     50%
-            // 求出右边能走得最大距离  大图的宽度 - 装大图的容器的宽度  50%  
-            //oBigImg.offsetWidth - oBigBox.offsetWidth
-
-            // 左侧 drag元素走得百分比 -》右侧大图应该走得距离
             var bigLeft = (oBigImg.offsetWidth - oBigBox.offsetWidth)*iLeft/xMax ;
             var bigTop = (oBigImg.offsetHeight - oBigBox.offsetHeight) * iTop/yMax;
             oBigImg.style.left = -bigLeft+"px";
@@ -109,7 +56,7 @@
             oDrag.style.display = "none";
             oBigBox.style.display = "none";
         }
-        
+
     </script>
 </body>
 </html>
