@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="选项卡.css">
+</head>
+<body>
+    <div id="container">
+        <ul id="btn-box">
+            <li class="active" >事实</li>
+            <li>体育</li>
+            <li>娱乐</li>
+        </ul>
+        <div id="content-box">
+            <div class="selected">111</div>
+            <div>222</div>
+            <div>333</div>
+        </div>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // 第一步  li绑定事件  on 第一个参数事件名  第二个参数是事件处理函数
+        $('#btn-box li').on('click',function(){
+            // console.log(this); //谁的点击事件this就是谁 
+            // 点击的时候呀给自己添加active class名   this ->$(this) 转成jq对象    // 将其他兄弟的active方法移除
+            $(this).addClass("active").siblings().removeClass("active"); //链式操作
+        })
+
+
+
+
+        
+
+        
+        
+    </script>
+</body>
+</html>
