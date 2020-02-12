@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 300px;
+    border: 1px solid black;
+}
+#container h2{
+    background: black;
+    color: cornsilk;
+    cursor: pointer;
+}
+#container ul{
+    display: none;
+}
