@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+}
+#container img{
+    width: 150px;
+    height: 150px;
+    width: 25%;
+    display: block;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+}
+#big{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #000 url(../tmall/images/22.jpg);
+    background-size: contain;
+    display: none;
+}

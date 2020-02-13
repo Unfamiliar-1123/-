@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="照片墙.css">
+</head>
+<body>
+    <div id="container"></div>
+    <div id="big"></div>
+    <script src="zepto.js"></script>
+    <script src="touch.js"></script>
+    <script>
+        for(var i=0; i<24; i++){
+            $('#container').append("<img src='../tmall/images/"+(i+1)+".jpg' />");
+        }
+        
+        $("#container img").on('click',function(){
+            $("#big").show();
+            $("#big").css("background-image","url(../tmall/images/"+($(this).index()+1)+".jpg)");
+            iNow = $(this).index();
+        });
+        $('#big').on('click',function(){
+            $("#big").hide();
+        }).on('swipeLeft',function(){
+            iNow++;
+            if(iNow == $('#container img').length){
+                iNow = 0;
+            }
+            $("#big").css("background-image","url(../tmall/images/"+(iNow+1)+".jpg)");
+        }).on('swipeRight',function(){ 
+            iNow--;
+            if(iNow == -1){
+                iNow = $('#container img').size() - 1;
+            }
+            $("#big").css("background-image","url(../tmall/images/"+(iNow+1)+".jpg)");
+        })
+
+    </script>
+</body>
+</html>
