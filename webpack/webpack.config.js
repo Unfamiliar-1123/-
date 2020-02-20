@@ -40,6 +40,14 @@ module.exports = {
                     "postcss-loader",
                     "sass-loader"
                 ]
+            },
+            {
+                test:/\.js$/,
+                loader: "babel-loader",
+                options:{
+                    presers:["@babel/preset-env"]
+                },
+                exclude: /node_modules/
             }
         ]
     },
@@ -49,7 +57,8 @@ module.exports = {
             template:"./src/index.html"
         }),
         // 打包之前先将dist目录删除
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin()                      
+        
     ],
     devServer:{
         contentBase:path.resolve(__dirname,"dist"),
@@ -58,5 +67,4 @@ module.exports = {
         // port:
     }
 }
-
 
