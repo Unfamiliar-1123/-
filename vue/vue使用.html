@@ -9,11 +9,14 @@
     <div id="root">
         {{msg}}
         {{a}}
+        <span v-html="msg"></span>
         <hr>
         <ul>
             <li v-for="val in arr">{{val}}</li>
         </ul>
+        <button @click="fn($event)">click</button>
     </div>
+    
     <div>
 
     </div>
@@ -22,9 +25,17 @@
 let vm = new Vue({
     el:"#root",
     data:{
-        msg:'hello world',
+        msg:'<h2>hello world</h2>',
         a:'1111',
         arr:["lili","lala","mumu"]
+    },
+    methods:{
+        fn(event){
+            console.log(event);
+            // console.log(this.arr);
+            // this.arr.pop();
+            this.msg = "hahahahhalalalala"
+        }
     }
 })
 
