@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todolist</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <style>
-
+       
         #app{
             width: 500px;
-            margin: 0 auto;
+            margin:0 auto;
         }
         ul{
             margin: 0;
             padding: 0;
-
         }
         li{
-           list-style: none;
-           height: 50px;
-           line-height: 50px;
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
         }
         .active{
-            background: red;
+            background:navajowhite;
         }
         .right{
             float: right;
@@ -34,43 +34,47 @@
         <hr>
         <div>
             名称：<input type="text" v-model="proName" placeholder="请输入商品名称">
-            价格：<input type="text" v-model="proPrice" placeholder="请输入商品价格">
+            价格：<input type="number" v-model="proPrice" placeholder="请输入商品价格">
             <button @click="add()">添加</button>
         </div>
         <div>
             <input type="text"><button>搜索</button>
         </div>
         <ul>
-            <li v-for="(obj,index) in list">
-                <input type="checkbox">
+            <li v-for="(obj,index) in list" 
+                @click="change(obj)"
+                :class="{active:obj.isActive}"
+            >   
+                <input type="checkbox" v-model="obj.isActive">
                 <span>{{obj.name}}</span>
                 <div class="right">
                     <span>{{obj.price}}</span>
-                    <span>[x]</span>
+                    <span>[X]</span>
                 </div>
             </li>
         </ul>
         <div>
             <button>删除</button>
-            <span>总价888</span>
+            <span>总价{{totle()}}</span>
         </div>
-
     </div>
 
-    <script src="vue.js"></script>
-    <script>
 
+    <script src="vue.js"></script>
+    <script>    
         new Vue({
             el:"#app",
             data:{
                 list:[
                     {
                         name:'苹果',
-                        price:'5'
+                        price:5,
+                        isActive:false
                     },
                     {
                         name:'apple11',
-                        price:6666
+                        price:6666,
+                        isActive:false
                     }
                 ],
                 proName:"",
@@ -80,13 +84,31 @@
                 add(){
                     this.list.push({
                         name:this.proName,
-                        price:this.proPrice
+                        price:this.proPrice,
+                        isActive:false
                     })
                     this.proName = "";
                     this.proPrice = "";
+                },
+                change(obj){
+                    obj.isActive = !obj.isActive;
+                },
+                totle(){
+                    let sum = 0;
+                    this.list.forEach(function(obj){
+                        if(obj.isActive){
+                            sum += obj.price;
+                        }
+                    })
+                    return sum;
                 }
             }
         })
+    
+    
+    
+    
     </script>
+
 </body>
 </html>
