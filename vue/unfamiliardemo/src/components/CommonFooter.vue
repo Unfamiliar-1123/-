@@ -76,7 +76,7 @@
             cursor: pointer;
         }
         .router-link-active{
-            color:#fff;
+            color:rgba(161, 86, 86, 0.788);
             text-decoration: none;
             cursor: pointer;
         }

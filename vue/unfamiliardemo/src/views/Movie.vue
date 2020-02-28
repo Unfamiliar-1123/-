@@ -7,7 +7,7 @@
                     <h3>{{obj.original_title}}</h3>
                     <div>肖央|</div>
                     <p>207147已观看</p>
-                    <p>年份：2019</p>
+                    <p>年份：2020</p>
                     <p>剧情</p>
                 </div>
             </li>
@@ -24,14 +24,7 @@
                 movieList:[]
             }
         },
-        // 通过ajax请求数据  
-        /**
-         * 跨域 
-         * 浏览器为了安全起见 -域名 协议 端口号 只要有一个不同的跨域
-         * 
-         * 解决方式  jsonbird
-         * https://bird.ioliu.cn/v1?url=xx
-         */
+        
         created(){
             axios.get('https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/in_theaters?start=0&count=10')
             .then((res)=>{
