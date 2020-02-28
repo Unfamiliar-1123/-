@@ -1,6 +1,6 @@
 <template>
     <div>
-        music
+        音乐
     </div>
 </template>
 
