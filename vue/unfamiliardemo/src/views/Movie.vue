@@ -37,11 +37,9 @@
                 this.$router.push({path:'/movie-detail',query:{id}})
             }
         },
-        
         created(){
             axios.get('https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/in_theaters?start=0&count=10')
             .then((res)=>{
-                // console.log(res.data)
                 this.movieList = res.data.subjects;
             }).catch((res)=>{
                 console.log(res)
