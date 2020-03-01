@@ -38,20 +38,9 @@
                 ]
             }
         },
-        // methods:{},
-        // compouted:{
-
-        // },
-        // components:{
-
-        // },
-        // 每次刷新页面进来 state 会取到默认值
         created(){
-            // 取到页面的路由的path 判断path和menu菜单中哪个obj对象是对应的 change(obj)
-            // console.log(this.$route.path)
             this.menu.forEach((obj,index)=>{
-                if(obj.path == this.$route.path){
-                    // 判断路径跟menu中哪个是匹配的 ，修改color title
+                if(this.$route.path.includes(obj.path)){
                     this.$store.commit('change',obj);
                 }
             })
@@ -76,7 +65,7 @@
             cursor: pointer;
         }
         .router-link-active{
-            color:rgba(161, 86, 86, 0.788);
+            color:#fff;
             text-decoration: none;
             cursor: pointer;
         }
