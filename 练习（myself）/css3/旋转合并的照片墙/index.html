@@ -10,5 +10,37 @@
     <div id="container">
 
     </div>
+    <script>
+        var count = 0;
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                // console.log(Math.random());
+                count++;
+                if(count == 24){
+                    loadSuccess();
+                }
+
+            }
+            oImg.src="../旋转合并的照片墙/img/thumbs/"+(i+1)+".jpg";
+            
+        }
+
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                count++;
+                if(count == 24){
+                    loadSuccess();
+                }
+
+            }
+            oImg.src="../旋转合并的照片墙/img/"+(i+1)+".jpg";
+           
+        }
+        function loadSuccess(){
+            console.log('ok');
+        }
+    </script>
 </body>
 </html>
