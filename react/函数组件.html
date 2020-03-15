@@ -11,17 +11,24 @@
     <script src="react-dom.development.js"></script>
     <script src="browser.min.js"></script>
     <script type="text/babel">
-    let a = 10;
-    let b = 20;
+    const Hello = (props)=>{
+        return(
+            <div>
+                <h2>hello !{props.name} -- {props.age}</h2>
+                <p>hehe  haha  嘻嘻嘻!</p>
+                {props.children}
+            </div>
+        )
+    }
     ReactDOM.render(
-        <div>
-            <h2>hello world</h2>
-            <p>呵呵{a+b}</p>
-        </div>,
-        
+        <Hello name="qianqian" age="20">
+            <div>
+                <h3>传值内容</h3> 
+                <h4>内容2</h4>   
+            </div>
+        </Hello>,
         document.getElementById('root')
     )
-
 
     </script>
 </body>

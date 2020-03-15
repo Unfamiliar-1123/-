@@ -11,17 +11,26 @@
     <script src="react-dom.development.js"></script>
     <script src="browser.min.js"></script>
     <script type="text/babel">
-    let a = 10;
-    let b = 20;
+    class Hello extends React.Component{
+        render(){
+            return (
+                <div>
+                    <h2>hello! {this.props.name} == {this.props.age}</h2>
+                    <p>哈哈哈哈哈</p>
+                    {this.props.children}
+                </div>
+            )
+        }
+    }
     ReactDOM.render(
-        <div>
-            <h2>hello world</h2>
-            <p>呵呵{a+b}</p>
-        </div>,
-        
+        <Hello name="jianjian" age="10">
+            <div>
+                <h3>传值内容</h3>
+                <h4>内容</h4>
+            </div>    
+        </Hello>,
         document.getElementById('root')
     )
-
 
     </script>
 </body>
