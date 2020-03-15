@@ -1,12 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <common-header></common-header>
   </div>
 </template>
+<script>
+import CommomHeader from'./components/CommonHeader';
+    export default {
+        components:{
+          CommomHeader
+        }
+    }
+</script>
 
 <style lang="scss">
 #app {
