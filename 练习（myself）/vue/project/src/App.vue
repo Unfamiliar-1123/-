@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <common-header></common-header>
+    <!-- <common-header></common-header> -->
+    <router-link to="/home">首页</router-link>
   </div>
 </template>
 <script>
