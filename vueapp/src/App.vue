@@ -12,6 +12,7 @@
 import CommonHeader from'./components/CommonHeader';
 import CommonFooter from'./components/CommonFooter';
 export default {
+  
   components:{
     CommonHeader,
     CommonFooter
