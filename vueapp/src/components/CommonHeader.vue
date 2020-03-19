@@ -20,5 +20,7 @@
         position: fixed;
         top: 0px;
         width: 100%;
+        color: saddlebrown;
+            font-size: 20px;
     }
 </style>

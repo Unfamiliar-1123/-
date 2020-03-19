@@ -2,7 +2,7 @@
   <div id="app">
    <common-header></common-header>
     <div class="container"> 
-      465151651
+     <router-view></router-view>
       </div>
    <common-footer></common-footer>
    
