@@ -1,15 +1,22 @@
 <template>
     <div>
        <ul class="list-box">
-           <li class="list">
+           <li class="list" v-for="obj in movieList" 
+           :key="obj.id"
+           @click="goDetail(obj.id)"
+           >
                <a href="#">
-                   <img src="http://09imgmini.eastday.com/mobile/20200116/20200116172059_4da879213e48ec43b9fdd7d22ebcf97b_1.jpeg" alt="picture">
+                   <img :src="obj.images.medium" alt="picture">
                    <div class="dese-box">
-                       <h3>误杀</h3>
-                       <div>肖央|</div>
+                       <h3>{{obj.original_title}}</h3>
+                       <div>
+                           <span v-for="cast in obj.casts" :key="cast.id">{{cast.name}}|</span>
+                       </div>
                        <p>20714已观看</p>
                        <p>年份：2019</p>
-                       <p>剧情</p>
+                       <p>
+                           <span v-for="(genre,index) in obj.genres" :key="index">{{genre}}</span>
+                       </p>
                    </div>
                </a>
            </li>
@@ -18,8 +25,27 @@
 </template>
 
 <script>
+import axios from 'axios';
     export default {
-        
+        data(){
+            return{
+                movieList:[]
+            }
+        },
+        methods:{
+            goDetail(id){
+                this.$router.push({path:'/movie-detail',query:{id}})
+            }
+        },
+        created(){
+            axios.get('https://bird.ioliu.cn/v1?url=https://douban.uieee.com/v2/movie/in_theaters?start=0&count=10')
+            .then((res)=>{
+                // console.log(res)
+                this.movieList = res.data.subjects;
+            }).catch((res)=>{
+                console.log(res)
+            })
+        }
     }
 </script>
 
