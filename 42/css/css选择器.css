@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#dog img{
+    height: 500px;
+    width: 500px;
+}
+a:hover{
+    color: indianred;
+}
+p{
+    background-color: lavenderblush;
+}
+ul .aa{
+    background-color: lawngreen;
+}
+ul .bb:hover{
+    color: lightseagreen;
+}
