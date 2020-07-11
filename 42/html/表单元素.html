@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="sex">性别：</label>
+            男<input type="radio" id="sex" name="sex" value="boy">
+            女<input type="radio" id="sex" name="sex" value="girl">
+        </div>
+        <div>
+            <label for="hobby">爱好：</label>
+            读书<input type="checkbox" name="hobby" id="hobby" value="read">
+            跳舞<input type="checkbox" name="hobby" id="hobby" value="dance">
+            运动<input type="checkbox" name="hobby" id="hobby" value="sport">
+        </div>
+        <div>
+            <label for="pwd">密码：</label>
+            <input type="password" name="pwd" id="pwd">
+        </div>
+        <div>
+            <input type="file" name="file" id="file">
+        </div>
+        <div>
+            <label for="age">年龄：</label>
+            <select name="age" id="age">
+                <option value="20岁以下">20岁以下</option>
+                <option value="20~30">20~30</option>
+                <option value="30以上">30以上</option>
+            </select>
+        </div>
+        <div>
+            <textarea name="description" id="" cols="30" rows="20"></textarea>
+        </div>
+
+
+        <!-- html5 -->
+        <div>
+            <label for="email">邮箱</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="url">网址</label>
+            <input type="url" name="url" id="url">
+        </div>
+        <div>
+            数量：<input type="number" name="num" id="num" min="1" max="10">
+            <br>
+            音量：<input type="range" name="range" id="range" min="1" max="10">
+        </div>
+        <div>
+            日期：<input type="date" name="date" id="date">
+        </div>
+
+        <div>
+            <button>button</button>
+            <input type="button" value="this is a button">
+            <input type="reset" value="reset">
+            <input type="submit" value="submit">
+        </div>
+    </form>
+</body>
+</html>
