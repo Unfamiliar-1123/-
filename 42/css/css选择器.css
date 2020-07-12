@@ -18,3 +18,10 @@ ul .aa{
 ul .bb:hover{
     color: lightseagreen;
 }
+#container .box1:hover{
+    background-color: maroon;
+    color: mistyrose;
+}
+#div1 p:hover::after{
+    content: '❤️';
+}
