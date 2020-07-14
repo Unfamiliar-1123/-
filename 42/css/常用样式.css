@@ -8,6 +8,13 @@
     background-color: palegoldenrod;
     font-size: 16px;
 }
+.div1 a{
+    /* 链接下方的横线消失 */
+    text-decoration: none;
+}
+.div1 a:visited{
+    color: orangered;
+}
 .div1 a:hover{
     cursor: pointer;
     color: purple;
@@ -21,4 +28,51 @@
     /* width: 100px; */
     /* padding: 100px; */
     border: saddlebrown 1px solid;
+}
+.div3{
+    margin: 20px;
+    padding: 20px;
+    background-color:rosybrown;
+    background-image: url(./皮卡1.jpg);
+    width: 500px;
+    height: 500px;
+    /* 不重复 */
+    background-repeat: no-repeat;
+    /* background-position: 50% 50%;    与下面一条功能相同*/
+    background-position: center;
+    /* 图片不随着文字滚动而动 */
+    background-attachment: scroll;
+    /* fixed :起始位置是相对与浏览器窗口（可是窗口）左上角而非父元素 */
+    /* background-attachment: fixed; */
+    /*  图片随着文字滚动而动*/
+    /* background-attachment: local; */
+    /* 滚动条 */
+    overflow: scroll;
+}
+.div4{
+    background-color: navajowhite;
+    width: 500px;
+    height: 500px;
+    margin: 50px;
+    padding: 50px;
+    text-align: center;
+    /* 字间距 */
+    word-spacing: 5px;
+    /* 字母间距 */
+    letter-spacing: 1px;
+    /* 大小写转换 */
+    text-transform: capitalize;
+    text-decoration: line-through;
+}
+.div5{
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+    padding: 10px;
+    background-image: url(./皮卡2.jpg);
+    font-family: Georgia;
+    font-style: italic;
+    font-size: 50px;
+    background-attachment: scroll;
+    overflow: scroll;
 }
