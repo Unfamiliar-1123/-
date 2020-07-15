@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#outer{
+    background-color: lightgoldenrodyellow;
+    width: 1000px;
+    height: 500px;
+}
+.div1{
+    width: 200px;
+    height: 100px;
+    background-color: lightsalmon;
+    display: inline-block;
+}
+.div2{
+    width: 200px;
+    height: 100px;
+    background-color: orchid;
+    display: inline-block;
+    position: relative;
+    left: 20px;
+    top: 20px;
+}
+.div3{
+    width: 200px;
+    height: 100px;
+    background-color: pink;
+    display: inline-block;
+}

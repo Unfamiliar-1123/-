@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 1000px;
+    height: 500px;
+    background-color: plum;
+    overflow: hidden;
+    list-style: none;
+}
+.container a{
+    color: black;
+}
+/* .container a:visited{
+    color: red;
+} */
+/* #li1 a:visited{
+    color: red;
+} */
+.container li{
+    float: left;
+}
+/* #li1 a:visited{
+    color: red;
+} */
+#li1 a:hover,#li2 a:hover,#li3 a:hover{
+    color: chocolate;
+    background-color: #cccccc;
+    text-align: center;
+}
+
+/* #li2 a:hover{
+    color: chocolate;
+}
+#li3 a:hover{
+    color: chocolate;
+} */
+#li1{
+    width: 50px;
+    height: 50px;
+    /* background-color: #cccccc; */
+    line-height: 50px;
+    cursor: pointer;
+
+}
+#li2{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+#li3{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
