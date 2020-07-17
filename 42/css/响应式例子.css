@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+article{
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px;
+    height: 200px;
+    border: tan 3px solid;
+    flex: 0 1 300px;
+}

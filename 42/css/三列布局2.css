@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.div1{
+    height: 500px;
+    background-color: plum;
+}
+.div2{
+    width: 200px;
+    height: 500px;
+    background-color: rosybrown;
+    float: left;
+}
+.div3{
+    height: 500px;
+    background-color: sandybrown;
+    margin-left: 210px;
+}

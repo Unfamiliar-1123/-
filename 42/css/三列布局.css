@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#div1{
+    /* width: 500px; */
+    height: 500px;
+    background-color: peru;
+    display: flex;
+}
+#div2{
+    width: 200px;
+    height: 500px;
+    background-color: lightpink;
+}
+#div3{
+    /* width: 500px; */
+    flex: 1;
+    height: 500px;
+    background-color: lightyellow;
+}
