@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="轮播图.css">
+</head>
+<body>
+    <div id="container">
+        <ul class="img-box">
+            <li class="selected"><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596276254257&di=e97103aa86f96c50c68b86ca0f1a1f4d&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201308%2F08%2F162406wdldllhlzldxbjjd.jpg" alt="a picture"></a></li>
+            <li><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596276254256&di=83ec1a92c4545fd3abdd58ff7b4f1c71&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201703%2F30%2F204148p5qfjdpddzaijf5p.png" alt="a picture"></a></li>
+            <li><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596276254256&di=b82aead48859b33a093a11ebf9c19206&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1212%2F03%2Fc1%2F16304279_1354516295063.jpg" alt="a picture"></a></li>
+            <li><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596276254256&di=bacc71a0e6e29295e27a677be13539e7&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201403%2F30%2F105141qensqifi9irtenbq.jpg" alt="a picture"></a></li>
+            <li><a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596276254255&di=42d711c494dfad9e64b5b11fa4586187&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201802%2F20%2F20180220183919_Rw8tx.jpeg" alt="a picture"></a></li>
+
+        </ul>
+        <ul class="btn-box">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul class="arrow-box">
+            <li id="prev-btn">&lt;</li>
+            <li id="next-btn">&gt;</li>
+        </ul>
+    </div>
+    <script>
+        var oContainer = document.getElementById("container");
+        var oImgbox = document.getElementsByClassName("img-box")[0];
+        var aImg = oImgbox.getElementsByTagName("li");
+        var oBtnbox = document.getElementsByClassName("btn-box")[0];
+        var aBtn = oBtnbox.getElementsByTagName("li");
+        var oNext = document.getElementById("next-btn");
+        var iNow = 0;
+        var oPrev = document.getElementById("prev-btn");
+        for(var i = 0;i<aBtn.length;i++){
+            aBtn[i].index = i;
+            aBtn[i].onclick = function(){
+                for(var j = 0;j<aBtn.length;j++){
+                    aBtn[j].className = "";
+                    aImg[j].className = "";
+
+                }
+                this.className = "active";
+                aImg[this.index].className = "selected";
+                iNow = this.index;
+            }
+        }
+        oNext.onclick = function(){
+            iNow++;
+            if(iNow > aBtn.length-1){
+            iNow = 0;
+        }
+        for(var i = 0;i<aBtn.length;i++){
+            aBtn[i].className = "";
+            aImg[i].className = "";
+
+        }
+        aBtn[iNow].className = "active";
+        aImg[iNow].className = "selected";
+        }
+        oPrev.onclick = function(){
+            iNow--;
+            if(iNow < 0){
+                iNow = aBtn.length-1;
+            }
+            for(var i = 0;i < aBtn.length;i++){
+                aBtn[i].className = "";
+                aImg[i].className = "";
+            }
+            aBtn[iNow].className = "active";
+            aImg[iNow].className = "selected";
+
+        }
+        var timer = setInterval(function(){
+            oNext.onclick();
+        },2000);
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        }
+        oContainer.onmouseout = function(){
+            timer = setInterval(function(){
+                oNext.onclick();
+            },2000);
+        }
+    </script>
+</body>
+</html>

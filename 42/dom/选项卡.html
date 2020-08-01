@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check-box</title>
+    <link rel="stylesheet" href="选项卡.css">
+</head>
+<body>
+    <div id="container">
+        <ul id="btn-box">
+            <li class="active" >事实</li>
+            <li>体育</li>
+            <li>娱乐</li>
+        </ul>
+        <div id="content-box">
+            <div class="selected">111</div>
+            <div>222</div>
+            <div>333</div>
+        </div>
+    </div>
+    <script>
+        var oBtnBox = document.getElementById("btn-box");
+        var aLi = oBtnBox.getElementsByTagName("li");
+        var oContentBox = document.getElementById("content-box");
+        var aDiv = oContentBox.getElementsByTagName("div");
+        for(var i = 0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                for(var j = 0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                this.className = "active";
+                aDiv[this.index].className = "selected";
+            }
+        }
+
+    </script>
+</body>
+</html>
