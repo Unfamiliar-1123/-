@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放大镜</title>
+    <link rel="stylesheet" href="放大镜.css">
+</head>
+<body>
+    <div id="container">
+        <div id="small-box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596346839643&di=bf9731920d323dc81df988ec3207f9ad&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fb64543a98226cffc7a951157b8014a90f703ea9c.jpg" alt="a picture">
+            <span id="drag"></span>
+        </div>
+        <div id="big-box">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596346839643&di=bf9731920d323dc81df988ec3207f9ad&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fb64543a98226cffc7a951157b8014a90f703ea9c.jpg" alt="a picture" id="bigImg">
+        </div>
+    </div>
+    <script>
+        var oSmallBox = document.getElementById("small-box");
+        var oDrag = document.getElementById("drag");
+        var oBigBox = document.getElementById("big-box");
+        var oBigImg = document.getElementById("bigImg");
+        oSmallBox.onmouseover = function(){
+            oDrag.style.display = "inline";
+        }
+        oSmallBox.onmousemove = function(e){
+            e = e || window.event;
+            var iLeft = e.clientX - oDrag.offsetWidth/2;
+            var iTop = e.clientY - oDrag.offsetHeight/2;
+            var xMax = oSmallBox.offsetWidth - oDrag.offsetWidth;
+            var yMax = oSmallBox.offsetHeight - oDrag.offsetHeight;
+            if(iLeft < 0){
+                iLeft = 0;
+            }
+            if(iLeft > xMax){
+                iLeft = xMax;
+            }
+            if(iTop < 0){
+                iTop = 0;
+            }
+            if(iTop > yMax){
+                iTop = yMax;
+            }
+            oDrag.style.left = iLeft + "px";
+            oDrag.style.top = iTop + "px";
+            oBigBox.style.display = "block";
+            var bigLeft = (oBigImg.offsetWidth - oBigBox.offsetWidth)*iLeft/xMax;
+            var bigTop = (oBigImg.offsetHeight - oBigBox.offsetHeight)*iTop/yMax;
+            oBigImg.style.left = -bigLeft + "px";
+            oBigImg.style.top = -bigTop + "px";
+        }
+        oSmallBox.onmouseout = function(){
+            oDrag.style.display = "none";
+            oBigBox.style.display = "none";
+        }
+    </script>
+</body>
+</html>
