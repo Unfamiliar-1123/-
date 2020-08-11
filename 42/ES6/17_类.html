@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*类 具有相同属性和方法的集合  
+            通过在构造函数中添加属性 
+            在prototype原型对象中添加方法
+        */
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        // propotype: 构造函数下有一个propotype属性 ，属性是一个指针，指向构造函数的原型对象
+        // 添加在原型对象下的属性和方法 能够被所有实例化对象所共享 
+        Person.prototype.say = function(){
+            console.log('hahaha');
+        }
+        // p1 p2 实例化对象
+        let p1 = new Person('zs',20);
+        let p2 = new Person('lisi',18);
+        // p1.say();
+        // p2.say();
+        /*
+         程序员 继承人的属性和方法  
+         在子类的构造函数中通过父类.call继承属性 
+         通过子类.propotype = new 父类继承方法
+         //将原本prototype原型对象下的constructor属性 指回子类的构造函数
+        */
+        function Coder(name,age){
+            // console.log(this)//this->c1
+            // 继承人的属性
+            // Person(name,age); //Person中的this指向 ->window 改为this指向->c1
+            Person.call(this,name,age);  //传this是谁  给谁添加name和age属性 
+        }
+
+        // console.log(c1,c2);
+        // Coder的原型对象是人
+        Coder.prototype = new Person(); 
+        Coder.prototype.constructor = Coder; //将原本prototype原型对象下的constructor属性 指回构造函数Coder
+
+        let c1 = new Coder('xiaoqiang',18);  //new Coder 通过调用Person.call()将this(c1) 传到Person中，
+        let c2 = new Coder('daqiang',20); 
+        c1.say();
+        c2.say();
+
+        // function fn(){
+        //     this  
+        // }
+        // // let f1 = new fn();
+        // fn.call()
+
+    </script>
+    
+</body>
+</html>
